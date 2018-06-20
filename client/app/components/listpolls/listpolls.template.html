@@ -1,0 +1,28 @@
+<div class="container-fluid">
+	<div class=row>
+		<div class="col-sm-6">
+			<div class="card">
+		<h3 class="text-center">Select a poll to vote or Sign In to make a new poll</h3>
+		<table>
+			<tr ng-repeat="p in $ctrl.apolls.polls | orderBy : 'title'">
+				<td><a ng-href="#/poll/{{p._id}}">{{ p.title }}</a></td>
+			</tr>
+		</table>
+	</div>
+	</div>
+	<div class="col-sm-6">
+		<div class="card">
+			<h3 class="text-center">Trending ... {{$ctrl.trendingtitle}}</h3>
+			<test data="$ctrl.todisplay"></test>
+		</div>
+		<div class="card">
+			<h3 class="text-center">Site statistics</h3>
+			<p>Total users : {{$ctrl.apolls.total_users}}</p>
+			<p>Total polls : {{$ctrl.apolls.polls.length}}</p>
+		</div>
+
+	</div>
+
+
+
+</div>

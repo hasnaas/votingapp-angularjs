@@ -1,0 +1,48 @@
+<div class="card center-block">
+<h2 class="text-center">{{$ctrl.thepoll.poll.title}}</h2>
+
+	<div class="row update">
+		<div class="col-sm-6" id="col1">
+			<!--div class="card"-->
+			<form id="vote" name="vote" method="post" ng-submit="vote.$valid && $ctrl.updatepoll()">
+				<div class="form-group">
+					<label for="sel1">I'd like to vote for ...</label>
+					<select id="sel1" ng-model="$ctrl.selection" class="form-control center-block" type="select" required="true" name="sel1">
+						<option selected disabled>Choose an option</option>
+						<option ng-repeat="o in $ctrl.thepoll.lo" value={{o}}>{{o}}</option>
+						<option value="custom">I'd like a custom option</option>
+
+					</select>
+
+				</div>
+				<div class="form-group">
+					<label id="lsel2" for="sel2" ng-if="$ctrl.selection=='custom'">Vote for my own option</label>
+					<input id="sel2" name="sel2" class="form-control center-block" type="text" name="sel2" ng-if="$ctrl.selection=='custom'" ng-model="$ctrl.customoption" ng-pattern="$ctrl.validatecustom"required>
+					<div ng-show="vote.sel2.$error.pattern">Not a valid option!</div>
+					<button id="submitvote" class="btn btn-info btn-large center-block" type="submit">Submit 
+					<img src="/img/iconPoll2.png" width="20" height="20">
+					</button>
+					
+				</div>
+			</form>
+			<a class="btn btn-info btn-large center-block"  href="https://twitter.com/intent/tweet?text="+{{$ctrl.thepoll.poll.title}}+'%7C fccVoting &url=https://voting-app-hasnaas.c9users.io/poll/'+{{$ctrl.thepoll.poll._id}}  onclick=' var left = (screen.width/2)-(250); var top = (screen.height/2)-(250); return !window.open(this.href, "Share on Twitter", "width=500,height=500,position=absolute,left="+left+",top="+top)' target="_blank"> Share on twitter 
+				<i class="fa fa-twitter"></i>
+			</a>
+		<!--/div-->
+	</div>
+
+
+
+		<div class="col-sm-6" id="col2">
+			<!--div class="card"-->
+			<!--svg class="center-block"></svg-->
+			  <test data='$ctrl.todisplay'></test>
+			<!-- display only if a the poll's owner is logged in -->
+			<form id="deletepoll" method="post"  onsubmit='return confirm("Are you sure?")' ng-submit="$ctrl.deletepoll()" ng-if="$ctrl.isownerlogged">
+				<input  type="hidden" value="$ctrl.thepoll.poll._id">
+				<button id="delete" class="btn btn-large btn-danger center-block" type="submit">Remove this poll</button>
+
+			</form>
+		</div>
+		<!--/div-->
+	</div>

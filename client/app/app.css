@@ -1,0 +1,123 @@
+/* app css stylesheet, template default */
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li + li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+/*mine */
+body{
+    font-family:Verdana, Serif;
+    background-image:url('img/bg.jpeg');
+    color:#5498BB;
+}
+table{
+    width:100%;
+    
+}
+
+tr{
+    border:2px solid #eee;
+}
+td{
+    background-color:white;
+      padding-top:10px;
+    padding-bottom:10px;
+    text-align:center;
+}
+.card{
+    max-width:80%;
+    padding:20px;
+    margin:20px;
+    background-color:white;
+    border-radius:10px;
+    overflow:auto;
+}
+
+/*update poll page*/
+.update select{
+    width:80%;
+}
+
+.update label,h3 {
+    margin-left:10%;
+}
+.update .btn{
+    width:80%;
+    margin-bottom:10px;
+    margin-top: 10px;
+}
+.update input{
+    width:80%;
+}
+
+/*create new poll page */
+.myform{
+    margin-left:15px;
+    margin-right:15px;
+}
+#delete{
+    margin-top:20px;
+}
+
+
+/* for displaying data with d3 */
+
+.chart-container {
+  padding: .5em;
+  border: 4px solid black;
+  margin: .3em;
+  display: inline-block;
+}
+
+test{
+    width: 95%;
+    height: 300px;
+    display: inline-block;
+}
+
+/* Custom, iPhone Retina */ 
+    @media only screen and (min-width : 320px) {
+     .jumbotron,.card{max-width:90%;}
+    }
+
+    /* Extra Small Devices, Phones */ 
+    @media only screen and (min-width : 480px) {
+     .jumbotron,.card{max-width:90%;}
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (min-width : 768px) {
+     .jumbotron,.card{max-width:90%;}
+    }
+
+    /* Medium Devices, Desktops */
+    @media only screen and (min-width : 992px) {
+     .jumbotron{max-width:70%;}
+      .card{max-width:90%;}
+    }
+
+    /* Large Devices, Wide Screens */
+    @media only screen and (min-width : 1200px) {
+    .jumbotron{max-width:70%;}
+    }
+

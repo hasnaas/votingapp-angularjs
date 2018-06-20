@@ -1,0 +1,33 @@
+{
+  "name": "voting-app7",
+  "version": "0.0.0",
+  "description": "A fullstack JS application that manages polls",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hasnaas/votingapp-angularjs.git"
+  },
+  "author": "Hasna",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "connect-ensure-login": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.4",
+    "express-session": "^1.15.5",
+    "express-validator": "^4.1.1",
+    "mongoose": "^4.11.9",
+    "morgan": "^1.8.2",
+    "passport": "^0.4.0",
+    "passport-twitter": "^1.0.4",
+    "pug": "^2.0.0-rc.3"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hasnaas/FCC-VotingApp/issues"
+  },
+  "homepage": "https://github.com/hasnaas/FCC-VotingApp#readme"
+}

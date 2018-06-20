@@ -1,0 +1,16 @@
+<div class="container-fluid">
+	<div class="card">
+		<h3 >Polls owned by {{$ctrl.apolls.current_user.name}}</h3>
+		<table>
+			<tr ng-repeat="p in $ctrl.apolls.polls">
+				<td><a ng-href="#/poll/{{p._id}}">{{ p.title }}</a></td>
+				<td>
+					<form method="post" ng-submit="$ctrl.deletepoll()">
+						<input value="{{p._id}}" ng-model="$ctrl.pid" hidden>
+						<button class="btn" type="submit"><i class="fa fa-times"></i></button>
+					</form>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
